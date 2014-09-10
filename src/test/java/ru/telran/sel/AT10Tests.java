@@ -60,14 +60,14 @@ public class AT10Tests extends ru.telran.home.pages.TestBase {
 
 	public void clickContactUs() throws InterruptedException {
 		for (int second = 0;; second++) {
-			if (second >= 60)
+			if (second >= 180)
 				fail("timeout");
 			try {
 				if (isElementPresent(By.linkText("Contact Us")))
 					break;
 			} catch (Exception e) {
 			}
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 		}
 
 		driver.findElement(By.linkText("Contact Us")).click();
@@ -75,6 +75,19 @@ public class AT10Tests extends ru.telran.home.pages.TestBase {
 
 	public void openPage() {
 		driver.get(baseUrl + "/");
+		try {
+			isPageOpen();
+			}
+		catch(Exception e){};
+	}
+	
+	public void isPageOpen() throws Exception{
+	    for (int second = 0;; second++) {
+	    	if (second >= 60) fail("timeout");
+	    	try { if (isElementPresent(By.linkText("Contact Us"))) break; } 
+	    	catch (Exception e) {}
+	    	Thread.sleep(1000);
+	    }
 	}
 
 	private boolean isElementPresent(By by) {
