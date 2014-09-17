@@ -82,19 +82,20 @@
   <profiles>
     <profile>
       <id>local</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <properties>
         <env>local</env>
         <user.username></user.username>
         <user.password></user.password>
         <grid2.hub></grid2.hub>
-        <site.url></site.url>
-        <browser.name></browser.name>
+        <site.url>http://wekast.com/</site.url>
+        <browser.name>firefox</browser.name>
         <browser.version></browser.version>
         <browser.platform></browser.platform>
       </properties>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
+      
     </profile>
     <profile>
       <id>dev</id>
